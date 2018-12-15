@@ -1,4 +1,4 @@
-FROM kmhofmann/selene:test_base
+FROM kmhofmann/selene_test_base
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get -y install \
