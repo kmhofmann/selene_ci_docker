@@ -5,6 +5,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
   libjpeg-turbo8-dev \
   libpng-dev \
   libopencv-dev \
-  libboost-filesystem-dev \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /var/cache/apt/archives/*
