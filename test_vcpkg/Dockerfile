@@ -11,7 +11,7 @@ RUN git clone https://github.com/Microsoft/vcpkg.git \
  && git clone https://github.com/Microsoft/vcpkg.git ./vcpkg-libcxx \
  && CC=gcc CXX=g++ ./vcpkg-libcxx/bootstrap-vcpkg.sh \
  && CC=clang-7 CXX=clang++-7 CXXFLAGS="-stdlib=libc++" LDFLAGS="-stdlib=libc++" \
-      ./vcpkg-libcxx/vcpkg install libjpeg-turbo libpng opencv \
+      ./vcpkg-libcxx/vcpkg install libjpeg-turbo libpng tiff opencv \
  && rm -rf ./vcpkg-libcxx/buildtrees \
  && rm -rf ./vcpkg-libcxx/downloads \
  && rm -rf ./vcpkg-libcxx/packages
