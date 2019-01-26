@@ -11,3 +11,5 @@ docker build $@ -t kmhofmann/selene_test_apt ${SCRIPT_DIR}/test_apt/
 docker push kmhofmann/selene_test_apt
 docker build $@ -t kmhofmann/selene_test_vcpkg ${SCRIPT_DIR}/test_vcpkg/
 docker push kmhofmann/selene_test_vcpkg
+docker build $@ -t kmhofmann/selene_test_vcpkg_android ${SCRIPT_DIR}/test_vcpkg_android/
+docker push kmhofmann/selene_test_vcpkg_android
