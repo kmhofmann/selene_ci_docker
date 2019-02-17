@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get -y install \
   wget tar git ninja-build g++ \
-  libjpeg-turbo8-dev libpng-dev libtiff-dev
+  libjpeg-turbo8-dev libpng-dev libtiff-dev libopencv-dev
 
 WORKDIR /home
 
@@ -13,8 +13,6 @@ ENV PATH /home/cmake-3.13.4-Linux-x86_64/bin:$PATH
 
 RUN git clone https://github.com/kmhofmann/selene.git
 RUN mkdir -p selene/build
-
-RUN cd selene && git checkout cpack-support
 
 RUN cd selene/build && cmake -G Ninja \
       -DCMAKE_BUILD_TYPE=Release \
@@ -26,7 +24,7 @@ RUN cd selene/build && cmake -G Ninja \
 RUN cd selene/build && cmake --build .
 RUN cd selene/build && cpack -G "DEB" -C Release
 RUN dpkg-deb --info selene/build/selene*.deb
-RUN dpkg -i selene/build/selene*.deb
+#RUN dpkg -i selene/build/selene*.deb
 
 #RUN for file in ./selene/build/selene/*.so; do echo $file; ldd $file; done
 #RUN dpkg-query -S libstdc++.so.6
