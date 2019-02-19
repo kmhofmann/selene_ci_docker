@@ -22,11 +22,12 @@ RUN cd selene/build && cmake -G Ninja \
       -DCPACK_DEBIAN_PACKAGE_DEPENDS="libstdc++6, libjpeg-turbo8, libpng16-16, libtiff5" \
       ..
 RUN cd selene/build && cmake --build .
-RUN cd selene/build && cpack -G "DEB" -C Release
+RUN cd selene/build && cpack -G "DEB" -C Release --verbose
 RUN dpkg-deb --info selene/build/selene*.deb
-#RUN dpkg -i selene/build/selene*.deb
 
+## To determine the package names above, list all dependencies...
 #RUN for file in ./selene/build/selene/*.so; do echo $file; ldd $file; done
+## ...and query which package they belong to:
 #RUN dpkg-query -S libstdc++.so.6
 #RUN dpkg-query -S libjpeg.so.8
 #RUN dpkg-query -S libpng16.so.16
