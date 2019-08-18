@@ -11,8 +11,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
   ninja-build \
   g++ \
   clang \
-  libc++-7-dev \
-  libc++abi-7-dev \
+  libc++-dev \
+  libc++abi-dev \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /var/cache/apt/archives/*
 

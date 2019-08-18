@@ -1,21 +1,21 @@
 FROM kmhofmann/selene_test_base
 
 # Download Android NDK
-RUN wget https://dl.google.com/android/repository/android-ndk-r19-linux-x86_64.zip \
- && unzip -q android-ndk-r19-linux-x86_64.zip \
- && rm android-ndk-r19-linux-x86_64.zip \
- && export ANDROID_NDK_HOME=/home/android-ndk-r19 \
+RUN wget https://dl.google.com/android/repository/android-ndk-r20-linux-x86_64.zip \
+ && unzip -q android-ndk-r20-linux-x86_64.zip \
+ && rm android-ndk-r20-linux-x86_64.zip \
+ && export ANDROID_NDK_HOME=/home/android-ndk-r20 \
 # Clean up a bit
- && rm -rf ./android-ndk-r19/wrap.sh \
- && rm -rf ./android-ndk-r19/shader-tools \
- && rm -rf ./android-ndk-r19/prebuilt \
- && rm -rf ./android-ndk-r19/simpleperf \
- && rm -rf ./android-ndk-r19/python-packages \
- && rm -rf ./android-ndk-r19/toolchains/renderscript \
- && rm -rf ./android-ndk-r19/toolchains/aarch64-linux-android-4.9 \
- && rm -rf ./android-ndk-r19/toolchains/x86_64-4.9 \
- && rm -rf ./android-ndk-r19/toolchains/arm-linux-androideabi-4.9 \
- && rm -rf ./android-ndk-r19/toolchains/x86-4.9 \
+ && rm -rf ./android-ndk-r20/wrap.sh \
+ && rm -rf ./android-ndk-r20/shader-tools \
+ && rm -rf ./android-ndk-r20/prebuilt \
+ && rm -rf ./android-ndk-r20/simpleperf \
+ && rm -rf ./android-ndk-r20/python-packages \
+ && rm -rf ./android-ndk-r20/toolchains/renderscript \
+ && rm -rf ./android-ndk-r20/toolchains/aarch64-linux-android-4.9 \
+ && rm -rf ./android-ndk-r20/toolchains/x86_64-4.9 \
+ && rm -rf ./android-ndk-r20/toolchains/arm-linux-androideabi-4.9 \
+ && rm -rf ./android-ndk-r20/toolchains/x86-4.9 \
 # Clone and bootstrap vcpkg 
  && git clone https://github.com/Microsoft/vcpkg.git \
  && ./vcpkg/bootstrap-vcpkg.sh \
@@ -36,6 +36,6 @@ RUN wget https://dl.google.com/android/repository/android-ndk-r19-linux-x86_64.z
  && rm -rf ./vcpkg/downloads \
  && rm -rf ./vcpkg/packages \
 # Download Boost
- && wget https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.bz2 \
- && tar xf boost_1_69_0.tar.bz2 \
- && rm boost_1_69_0.tar.bz2
+ && wget https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 \
+ && tar xf boost_1_70_0.tar.bz2 \
+ && rm boost_1_70_0.tar.bz2
