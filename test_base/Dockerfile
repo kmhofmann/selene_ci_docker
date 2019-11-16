@@ -1,4 +1,4 @@
-FROM ubuntu:rolling
+FROM ubuntu:19.10
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get -y install \
