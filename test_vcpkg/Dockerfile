@@ -3,7 +3,7 @@ FROM kmhofmann/selene_test_base
 # Build and install vcpkg using GCC/libstdc++
 RUN git clone https://github.com/Microsoft/vcpkg.git \
  && ./vcpkg/bootstrap-vcpkg.sh \
- && ./vcpkg/vcpkg install libjpeg-turbo libpng opencv \
+ && ./vcpkg/vcpkg install libjpeg-turbo libpng tiff opencv \
  && rm -rf ./vcpkg/buildtrees \
  && rm -rf ./vcpkg/downloads \
  && rm -rf ./vcpkg/packages \
